@@ -1,0 +1,50 @@
+.portlet-column{
+    color: #29353d;
+}
+.portlet{
+	
+}
+.portlet.portlet-topper.portlet-title-default{
+	font-size: 18px;
+}
+
+.portlet-body > .navbar > .navbar-collapse {
+		display: block !important;
+		background-color: red;
+	}
+div.portlet-content.portlet-content-editable {
+	background-color: transparent;
+	/*padding: 10px;*/
+	/*margin:10px;*/
+	border: none;
+	/*border: solid 1px rgb(227, 230, 232);*/
+}
+
+
+h2.portlet-title-text {
+	font-size: 28px;
+	margin-bottom: 11px;
+}
+
+.portlet-body .alert {
+	padding: 18px;
+	font-size: 18px;
+	margin-bottom: 22px;
+} 
+.portlet-body .alert a{
+	color: #6a708b;
+    text-decoration: none;
+}
+.portlet-body form{
+	margin: 0;
+}
+
+/* Toi' fixed */
+
+.portlet-body .navbar .navbar-collapse {
+	display: block !important;
+}
+
+.navbar-default .navbar-toggle {
+    right: 10px !important;
+}

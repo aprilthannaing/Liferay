@@ -1,0 +1,904 @@
+/* @media (min-width: 361px) {
+  .container-fluid {
+    max-width: 96%;
+  }
+} */
+
+@media (min-width: 1200px) {
+  .container-fluid {
+    max-width: 1170px;
+  }
+}
+/* CWS fix */
+@media (max-width: 890px) {
+     .publication_content ul li ul li:first-child {
+      width: 100%;
+     }
+   }
+div.container-fluid {
+	margin-right: auto;
+    margin-left: auto;
+    /*
+    padding-left: 15px;
+    padding-right: 15px;
+	*/
+}
+
+div.container-full-width {
+	max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/*carousel min width 768px*/
+@media screen and (min-width: 768px) {
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-prev,
+  .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    font-size: 30px;
+  }
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .icon-prev {
+    margin-left: -15px;
+  }
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-next {
+    margin-right: -15px;
+  }
+  .carousel-caption {
+    right: 20%;
+    left: 20%;
+    padding-bottom: 30px;
+  }
+  .carousel-indicators {
+    bottom: 20px;
+  }
+}
+/*end carousel min width 768px*/
+
+/* end adjust font size */
+
+/* adjust sidebar */
+.sidebar{
+	padding: 0 30px;
+    padding-bottom: 20px;
+}
+
+.padding_left_15{
+	padding-left: 15px;
+}
+.padding_right_15{
+	padding-right: 15px;
+}
+
+/* tuanlv16 header css custom */
+#wrapper {
+	padding-top: 0
+}
+.logo_search_bar .container-fluid {
+	position:relative;
+}
+/* .logo_search_bar .search-holder .portlet-search {
+	width: 100%;
+  height: 100%;
+}
+.logo_search_bar .search-holder .portlet-search .portlet{
+	width: 100%;
+  height: 100%;
+}
+.logo_search_bar .search-holder .portlet-search .portlet .portlet-topper {
+ 	    bottom: 0;
+}
+.logo_search_bar .search-holder .portlet-search .portlet
+.portlet-content-editable{
+	width: 100%;
+  height: 100%;
+	margin:0;
+}
+.logo_search_bar .search-holder .portlet-search .portlet
+.portlet-content-editable .portlet-content-container{
+	width: 100%;
+  height: 100%;
+
+}
+.logo_search_bar .search-holder .portlet-search .portlet
+.portlet-content-editable .portlet-content-container .portlet-body {
+	width: 100%;
+  height: 100%;
+
+}
+.logo_search_bar .search-holder .portlet-search .portlet
+.portlet-content-editable .portlet-content-container .portlet-body fieldset{
+	width: 100%;
+  	height: 100%;
+
+}
+.logo_search_bar .search-holder .portlet-search .portlet
+.portlet-content-editable .portlet-content-container .portlet-body div{
+	width: 100%;
+  	height: 100%;
+
+} */
+.logo_search_bar .search-holder .portlet-search .portlet
+.portlet-content-editable .portlet-content-container
+.portlet-body  .form {
+	position:relative;
+	margin : 0;
+	padding: 0;
+	height:100%;
+
+}
+
+.portlet-body .subscribe-action{
+	display:none;	
+}
+
+.portlet-body .navbar .navbar-collapse {
+	display: block !important;
+}
+/* 
+.logo_search_bar .search-holder .portlet-topper{
+	bottom: 15px;
+} */
+.logo_search_bar .search-holder form input{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+  padding-right: 15%;
+  background: white;
+  
+}
+
+.logo_search_bar .search-holder .input-text-wrapper{
+    width: 100%;
+	height: 100%;
+}
+.logo_search_bar .search-holder .fa-search{
+	color: #3D3D3D;
+/* 	right: 10px; */
+/*     top: 50%; */
+/*     border-left: solid 1px; */
+/*     padding-left: 9px; */
+/*     line-height: 24px; */
+/*     transform: translateY(-50%); */
+/*     -moz-transform: translateY(-50%); */
+/*     -webkit-transform: translateY(-50%); */
+/*     -o-transform: translateY(-50%); */
+/*     -ms-transform: translateY(-50%); */
+}
+
+
+/*adjust font size for header slide hompage*/
+.mainslide_caption p{
+	font-size: 14px;
+}
+.footer_v2{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.photovideogalleryWrapper p{
+	font-size: 14px;
+}
+/* sondn4 fix font size */
+.news_n_media p{
+	font-size: 14px;
+}
+
+/* sondn4 fix font size */
+.publication_content .lightfontweight{
+	font-size: 19px;
+}
+
+/* sondn4 fix opacity */
+.mnp-photo-video-layout #custumselect{
+	opacity: 1;
+}
+
+/* sondn4 fix categorization filter title */
+.taglib-categorization-filter.entry-title{
+	display: none;
+}
+/*HUNGMT3 - Fix header over configuration */
+.stick {
+    z-index: 1000;
+}
+
+#main-menu .sub {
+    z-index: 1020;
+}
+
+.loginpopup,.forgotuserid_pwd_popup,.registerpopup,.map_popup,.subscribepopup,.emergencybox{
+    z-index: 1010;
+}
+
+/*AnhBT21 - Fix marquee*/
+/* .marquee-cover{
+	padding-left:20px;
+	padding-right:20px;
+	background:#ef1f1f
+}
+#marquee{
+	padding: 17px 20px;
+    white-space: nowrap;
+    font-size:20px;
+    color:white;
+} */
+/*end marquee fix*/
+
+/*HUNGMT3 - Fix docked text not positioned correctly when its content is short*/
+.news_n_media_imgWrapper .bottomtext {
+	right: 0;
+	left: 0;
+}
+
+/* SonDN4 Star-rating customize*/
+.rating-score {
+    float: right;
+    margin-top: -6px;
+}
+.rating-score > ul {
+    list-style: none;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+.rating-score > ul > li {
+    float: left;
+    margin-left: 2px;
+    background: url(../images/star-rating.gif) no-repeat;
+    width: 22px;
+    height: 25px;
+    cursor: pointer;
+}
+.rating-score > ul > li:first-child {
+    margin-left: 0;
+}
+
+.rating-score > ul > li.active {
+    background-position: -50px;
+}
+.rating-score > span.less {
+    cursor: pointer;
+    background: url(../images/star-rating.gif) -75px no-repeat;
+    display: block;
+    float: left;
+    height: 25px;
+    width: 25px;
+    display: none;
+}
+
+/* HUNGMT3 Fix first,last button can be clickable */
+.disabled {
+	pointer-events: none;
+	cursor: default;
+}
+
+/* HUNGMT3 Fix CSS for feedback form */
+.ddl-form-builder-app .lfr-ddm-form-page > .row {
+   margin-left:0;
+   margin-right:0;
+   display:block;
+}
+
+.ddl-form-builder-app .lfr-ddm-form-page > .row>div {
+   padding-left:0;
+   padding-right:0;
+}
+
+.ddl-form-builder-app .lfr-ddm-form-page > .row>div:nth-child(1) > div:nth-child(1) {
+   margin-right:0;
+}
+
+.ddl-form-builder-app .lfr-ddm-form-page > .row>div>div {
+	padding-top:0;
+	padding-bottom:0;
+}
+
+.ddl-form-builder-app .lfr-ddm-form-page > .row select {
+   border: 1px solid #ccc;
+}
+
+.ddl-form-builder-app .lfr-ddm-form-page > .row textarea {
+   height: 200px;
+}
+/* tuanlv16 login */
+.login-page {
+	@media (min-width: 992px){
+	.col-md-offset-3 {
+    margin-left: 25%;
+	}
+	.col-md-6 {
+	float: left;
+    width: 50%;
+	}
+}
+.col-md-offset-3 .form .form-group input{
+	background: #ededed;
+    border: 1px solid #aaa;
+    box-shadow: none;
+    height: 44px;
+    margin: 8px 0 16px 0;
+    border-radius: 4px;
+}
+.validator-message {
+	color: #a94442;
+}
+	
+}
+
+/* tuanlv16 search result page  */
+
+.search-result .form-group{
+		width: 100%;
+		height: 100%;
+	}
+.search-result .searchresult{
+		display: none;
+	}
+.search-result .list-group-item-content{
+		border-left: none;
+		border-right: none;
+		border-top: none;
+	}
+.search-holder .searchbar .input-text-wrapper{
+		height: 100%;
+		width: 100%;
+}
+.nopadding .search-holder .searchbar .input-text-wrapper input{
+	    width: 100%;
+	    height: 100%;
+	    max-width: 100%;
+	    padding: 10px;
+	    border-radius: 4px;
+	    margin: 0 0 20px;
+	    font-size: 18px;
+	    font-family: inherit;
+	    line-height: inherit;
+	    border: none;
+	    background-color: #ffff;
+	    box-shadow: none;
+}
+
+/* .logo_search_bar .search-holder .form .search-input{
+ 	 margin-right: 15%; } */
+ 	 
+.closedHeader {
+	margin-left: 320px !important;
+}
+
+ input[type=text]::-ms-clear {
+    display: none;
+}
+/* Toi fixed */
+
+.news_n_media ul li,.announcementwrapper ul li{
+    overflow: hidden;
+}
+/* .maincontent a { */
+/* 	overflow: hidden; */
+/* } */
+/* tuanlv16 fix blog page */
+.taglib-ratings.thumbs .thumbrating {
+	margin: none;
+	margin-top: -6px;
+}
+
+#gov_search_wrapper .nopadding {
+	width: 100%;
+}
+
+/* anhbt21 - fix radio input survey-poll page */
+.radio input{
+	height: auto;
+}
+
+/* anhbt21 - fix font size category navigation survey-poll page */
+.panel-title a{
+	font-size: 16px;
+}
+
+/* anhbt21 - fix right content of poll-survey page */
+.row {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.panel{
+	background-color: #fff;
+	border : 1px solid transparent;
+}
+/* anhbt21 - fix rating */
+.icon-star{
+	float: left;
+    margin-left: 2px;
+    background: url(../images/star-rating.gif) no-repeat;
+    width: 22px;
+    height: 25px;
+    cursor: pointer;
+    background-position: -50px;
+}
+.icon-star-empty{
+	float: left;
+    margin-left: 2px;
+    background: url(../images/star-rating.gif) no-repeat;
+    width: 22px;
+    height: 25px;
+    cursor: pointer;
+
+}
+.icon-star:before {
+    content: none;
+}
+.icon-star-empty:before {
+    content: none;
+}
+.taglib-ratings{
+	display: table;
+	margin: 0 auto;
+}
+
+/*HUNGMT3 Add support for showing a notified message when an user makes a comment*/
+#notified-comment-message {
+	display:none;
+    bottom: 50%;
+    left: 50%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:5px 20px;
+    border: 1px solid #c0c0c0;
+    background-color: #f3f3f3;
+    position:fixed;
+}
+/*HUNGMT3 Make p tag in a blog detail spread multi lines */
+.lfr-discussion-message-body p {
+	word-wrap: break-word;
+}
+
+/*HUNGMT3 */
+.comment-info {
+	width: 95%;
+	display: inline-block;
+}
+.comment-edit-delete {
+	width: 5%;
+	display: inline-block;
+	float:right;
+}
+
+/*THANGDT3 - fix space between First name and Last name fields (Feedback page)*/
+@media screen and (min-width:992px){
+.lfr-ddm-form-page .row:nth-of-type(1) .col-md-6:nth-of-type(1) .input-group-container {
+	padding-right : 10px;
+}
+.lfr-ddm-form-page .row:nth-of-type(1) .col-md-6:nth-of-type(2) .input-group-container {
+	padding-left : 10px;
+}}
+
+/* AnhBT21 adjust survey css */
+.survey-custom .lfr-ddm-field-group{
+	margin-top: 20px !important;
+	margin-right: 0px !important;
+    margin-left: 0px !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    background: #d8d8d8;
+    border-radius: 0px;
+}
+.survey-custom .lfr-ddm-field-group .radio{
+	color: #3D3D3D;
+	position: relative;
+    display: block;
+    margin-top: 10px;
+	margin-bottom: 20px !important;
+}
+.survey-custom .lfr-ddm-field-group .radio label{
+	font-family: "Myanmar3";
+}
+.survey-custom .lfr-ddm-field-group .control-label{
+	display: none;
+}
+.survey-custom .button-holder{
+	margin-top: 20px !important;
+	text-align: center!important;
+}
+.survey-custom .button-holder .btn{
+	-webkit-appearance: button;
+    cursor: pointer;
+    background: #f7b226 !important;
+    background-size: 22px !important;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.survey-custom .button-holder .btn .lfr-btn-label{
+	color: rgb(51, 51, 51);
+	font-family: inherit;
+}
+
+/*THANGDT3 - align text inside table for smaller screen(Government website page)*/
+@media screen and (max-width:767.9px){
+.mnp-ministry-web-layout table td{
+	text-align : left;
+}
+.mnp-ministry-web-layout table td:first-child{
+	padding-left : 10%;
+}
+}
+
+/* AnhBT21 fix Vote css */
+.poll-custom .panel-body .btn{
+	border: none;
+}
+.poll-custom .panel-body .btn .lfr-btn-label{
+	color: rgb(51, 51, 51);
+}
+
+/* SonDN4-fix bug GUI search screen New and Media page archive */
+.news-and-media-detail-layout .row{
+	margin-left: 0px;
+    margin-right: 0px;
+}
+
+.news-and-media-detail-layout .three_col_form_width li{
+	width: 31.5%!important;
+}
+/* .news-and-media-detail-layout .four_col_form_width{ */
+/* 	width: 31.5%!important; */
+/* } */
+
+/*THANGDT3 - adjust size for notification navigation icon(After login) */
+.sticker-right{
+	right : 5px;
+}
+.sticker{
+	top : 20px;
+	height : 20px;
+	width : 20px;
+	line-height : 20px;
+}
+
+/*THANGDT3 - Service detail page */
+.increase-z{
+	z-index : 700;
+}
+.social-section{
+	display : block;
+	float : left;
+}
+.share-section{
+	margin-right : 20px;
+}
+
+#st-1 {
+    font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;
+    direction: ltr;
+    display: block;
+    opacity: 1;
+    text-align: left;
+    z-index: 94034;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+html|* > svg {
+    transform-origin: 50% 50% 0px;
+}
+#st-1 .st-btn[data-network='twitter'] {
+    background-color: #55acee;
+}
+#st-1 .st-btn {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: opacity 0.2s ease-in, top 0.2s ease-in;
+    -ms-transition: opacity 0.2s ease-in, top 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in, top 0.2s ease-in;
+    -webkit-transition: opacity 0.2s ease-in, top 0.2s ease-in;
+    transition: opacity 0.2s ease-in, top 0.2s ease-in;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 11px;
+    height: 32px;
+    line-height: 32px;
+    margin-right: 8px;
+    padding: 0 8px;
+    position: relative;
+    text-align: center;
+    top: 0;
+    vertical-align: top;
+    white-space: nowrap;
+}
+#st-1 .st-btn > svg {
+    height: 16px;
+    width: 16px;
+    position: relative;
+    top: 8px;
+    vertical-align: top;
+}
+
+#st-1 .st-btn:hover {
+    opacity: .8;
+    top: -4px;
+}
+#st-1 .st-btn[data-network='facebook'] {
+    background-color: #3B5998;
+}
+#st-1 .st-btn[data-network='googleplus'] {
+    background-color: #dc4e41;
+}
+
+#st-1 .st-btn:last-child {
+    margin-right: 0;
+}
+
+/* tuanlv16 fix search webcontent */
+.display_flex.event_search_bar.nopadding.gov_service_hidesearch_form {
+	background: none;
+}
+#stickylogomenubar .navbar .menubar_ul_li .current:first-child {
+	padding-top: 2px;
+}
+.btn {
+	padding: 6px 12px !important;
+}
+/*TOI's code*/
+
+.icons_6cols li .icon_wrapper {
+	min-height: 125px;
+}
+
+.icons_6cols li h2 {
+	min-height: 40px;
+}
+
+.icons_6cols li .icon_wrapper {
+	min-height: 125px;
+}
+
+.icons_6cols li h2 {
+	min-height: 40px;
+}
+
+mnp_body #hometab1 .tab-content {
+	border: 1px solid #ddd
+}
+
+#hometab1 .nav-pills>li.active{
+	margin-bottom: -1px;
+}
+
+#hometab1 .nav-pills>li>a, #hometab1 .nav-pills>li>a:hover {
+	background-color: transparent;
+}
+
+.search-holder .searchbar .input-text-wrapper {
+	overflow: hidden;
+}
+/*End TOI's code*/
+
+/* HAINT51: Fix Topics's tabs */
+#topic-tab.nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+
+#topic-tab.nav-tabs>li {
+    float: left;
+    margin-bottom: -1px;
+}
+/* HAINT51: Fix Topics's tabs */
+/* HAINT51: Fix User Icon */
+.user-icon {
+    border-radius: 500px;
+    font-size: 11px !important;
+    height: 28px;
+    line-height: 28px;
+    width: 28px;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 4px !important;
+}
+
+/* fix header font and color  SonDN4*/
+.titlefont {
+    color: #0c426e;
+}
+/* HAINT51: Fix User Icon */
+
+.gray_leftsidebar ul ul {
+    background: none;
+    padding:  0;
+}
+.gray_leftsidebar ul ul li a {
+    color: #3d3d3d;
+}
+.gray_leftsidebar ul ul li:before {
+	content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    background: black;
+    top: 23px;
+}
+
+/* THANGDT3 -  Feedback text area */
+.mnp-feedback-layout #p_p_id_com_liferay_dynamic_data_lists_form_web_portlet_DDLFormPortlet_INSTANCE_feedback_en_ textarea, .mnp-feedback-layout #p_p_id_com_liferay_dynamic_data_lists_form_web_portlet_DDLFormPortlet_INSTANCE_feedback_my_ textarea{
+	height : 200px!important;
+	margin-top : 10px;
+}
+
+/* sondn4 - breadcrum */
+
+.breadcrumrow ul li.nextto {
+    position: relative;
+    margin-top: 4px;
+    padding-left: 15px;
+}
+
+.breadcrumrow ul li.nextto:before {
+    color: #fff!important;
+    position: absolute;
+    top: -1px;
+    left: -3px;
+    font-size: 1.3em;
+}
+
+ul#sitemap li:before,
+.breadcrumrow ul li.nextto:before {
+    content: "\e232";
+    font-family: linea-icons;
+    font-weight: normal !important;
+    font-style: normal;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+/*     color: #fff!important; */
+    padding-right: 7px;
+}
+
+/*THANGDT3 - Increase space between form inputs ( Login and Register page) */
+#portlet_com_liferay_login_web_portlet_LoginPortlet .form-group{
+	margin-bottom : 10px;
+}
+
+/*THANGDT3 - Prevent default minheight class from being overlapped */
+.minheight {
+    min-height: 200px!important;
+}
+
+/*THANGDT3 - Prevent default panel-body class from being overlapped */
+.panel-body{
+	padding: 15px!important;
+}
+
+.event_search_bar {
+	overflow: hidden;
+}
+
+.event_search_bar .subscribe_btn.absolutebtn {
+	z-index: 99;
+}
+
+@media (max-width: 460px) {
+	.agriculture_double_col ol {
+		padding-left: 0 !important;
+	}
+	
+	.padding-top15 {
+		padding-top: 15px;
+	}
+	
+	.publication_content ul li ul li:first-child {
+		width: 100%;
+	}
+	
+	.topic-search {
+		width: 100% !important;
+		margin: 0 15px;
+	}
+	
+	.margin-box {
+		margin: 0 15px;
+	}
+	
+	.margin-left-0{
+		margin-left: 0;
+	} 
+}
+
+.margin-box {
+	margin-left: 15px;
+}
+
+.topic-search {
+	width: 25.2% !important;
+}
+/* .video-image--wrapper { */
+/* 	position: relative; */
+/* 	display: block; */
+/* 	overflow: hidden; */
+/* 	width: 253px; */
+/* 	height: 145px; */
+/* } */
+
+.video-image--wrapper img {
+	height: 180px;
+	object-fit:cover;
+}
+.Opportunitieslists li:last-child {
+	display: inline-block;
+	margin-left: 25px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+/* tuan fix highlight margin */
+.highlights_bar .container-fluid {
+	padding-right: 15px;
+    padding-left: 15px;
+}
+
+/*THANGDT3 - Change survey ui (Survey detail page) */
+#survey-detail-layout .lfr-ddm-field-group.form-builder-field {
+    background: #d8d8d8;
+	margin-bottom: 20px;
+    padding-left: 50px;
+	font-size: 16px;
+}
+#survey-detail-layout form .panel-body {
+    padding: 0!important;
+}
+#survey-detail-layout .lfr-ddm-field-group.form-builder-field .radio, #survey-detail-layout .lfr-ddm-field-group.form-builder-field span.control-label {
+    margin-bottom: 20px!important;
+    margin-left: 20px!important;
+}
+#survey-detail-layout .lfr-ddm-field-group.form-builder-field span.control-label {
+    display: block;
+}
+#survey-detail-layout .form.container-fluid-1280 .button-holder{
+	text-align: center;
+}
+/* cws fix */
+.slick-slide img {
+    display: block; 
+}
+	
+/*THANGDT3 - crop image (About Myanmar landing page) */
+.subpage_subcol_sections img {
+	height: 200px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 767.9px) {
+	.mnp_body table td:before {
+		width: auto !important
+	}
+}

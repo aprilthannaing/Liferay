@@ -1,0 +1,34 @@
+.portlet-column{
+	padding-left: 15px;
+	padding-right: 15px;
+	font-family: 'Pyidaungsu', "Source Sans Pro FontCustom","Helvetica Neue FontCustom",Helvetica FontCustom,Arial FontCustom,sans-serif FontCustom;
+    font-size: 16px;
+    line-height: 1.42857;
+    color: #29353d;
+}
+.portlet{
+	margin-bottom: 10px
+}
+.portlet.portlet-topper.portlet-title-default{
+	font-size: 18px;
+}
+div.portlet-content.portlet-content-editable {
+	background-color: rgb(255, 255, 255);
+	padding: 10px;
+	border: solid 1px rgb(227, 230, 232);
+}
+
+h2.portlet-title-text {
+	font-size: 28px;
+	margin-bottom: 11px;
+}
+
+.portlet-body .alert {
+	padding: 18px;
+	font-size: 18px;
+	margin-bottom: 22px;
+} 
+.portlet-body .alert a{
+	color: #6a708b;
+    text-decoration: none;
+}
