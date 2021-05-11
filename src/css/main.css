@@ -5678,6 +5678,9 @@ Margin
     width: 24% !important; }
   .mnp_body ul.three_col_form_width li:nth-child(2) {
     margin: 0 20px; }
+  .searchTextBox input[type="text"]{
+    border-radius: 10px !important;
+  }
   .mnp_body input[type="text"],
   .mnp_body input[type="password"],
   .mnp_body .loginform input[type="number"],
@@ -5698,6 +5701,9 @@ Margin
   .mnp_body select::-ms-expand {
     display: none;
     /* hide the default arrow in ie10 and ie11 */ }
+  .searchTextBox .search-holder{
+    border-radius: 10px !important;
+  }
   .mnp_body .search-holder {
     position: absolute;
     top: 6px;
@@ -6437,6 +6443,9 @@ Margin
     margin-right: 6px; }
   .mnp_body .maincontent #advance_search {
     color: #515151 !important; }
+  .searchTextBox .subscribe_btn {
+      border-radius: 10px !important;
+    } 
   .mnp_body .subscribe_btn {
     padding: 18px 20px;
     background: #fff;
