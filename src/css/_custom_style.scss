@@ -145,14 +145,16 @@ div.container-full-width {
 	bottom: 15px;
 } */
 .logo_search_bar .search-holder form input{
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  border-radius: 4px;
-  border: none;
-  box-shadow: none;
-  padding-right: 15%;
-  background: white;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 40px;
+    border: none;
+    box-shadow: none;
+    padding-right: 15%;
+    background: #235781;
+    padding-bottom: 2%; 
+    color: white;
   
 }
 
@@ -161,7 +163,7 @@ div.container-full-width {
 	height: 100%;
 }
 .logo_search_bar .search-holder .fa-search{
-	color: #3D3D3D;
+	color: #cdc7c7;
 /* 	right: 10px; */
 /*     top: 50%; */
 /*     border-left: solid 1px; */
@@ -184,11 +186,11 @@ div.container-full-width {
 	padding-right: 15px;
 }
 .photovideogalleryWrapper p{
-	font-size: 14px;
+	font-size: 15px;
 }
 /* sondn4 fix font size */
 .news_n_media p{
-	font-size: 14px;
+	font-size: 15px;
 }
 
 /* sondn4 fix font size */
@@ -404,11 +406,7 @@ div.container-full-width {
 	font-size: 16px;
 }
 
-/* anhbt21 - fix right content of poll-survey page */
-.row {
-	margin-left: -15px;
-	margin-right: -15px;
-}
+
 .panel{
 	background-color: #fff;
 	border : 1px solid transparent;
@@ -594,7 +592,7 @@ div.container-full-width {
 }
 
 #st-1 {
-    font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;
+    font-family: 'Pyidaungsu', 'Poppins' !important;
     direction: ltr;
     display: block;
     opacity: 1;
@@ -603,6 +601,7 @@ div.container-full-width {
 }
 svg:not(:root) {
     overflow: hidden;
+    display: none;
 }
 html|* > svg {
     transform-origin: 50% 50% 0px;
@@ -686,17 +685,10 @@ html|* > svg {
 	min-height: 40px;
 }
 
-mnp_body #hometab1 .tab-content {
-	border: 1px solid #ddd
+.mnp_body #hometab1 .tab-content {
+	border: 0px solid #ddd
 }
 
-#hometab1 .nav-pills>li.active{
-	margin-bottom: -1px;
-}
-
-#hometab1 .nav-pills>li>a, #hometab1 .nav-pills>li>a:hover {
-	background-color: transparent;
-}
 
 .search-holder .searchbar .input-text-wrapper {
 	overflow: hidden;
@@ -799,7 +791,7 @@ ul#sitemap li:before,
 }
 
 .event_search_bar {
-	overflow: hidden;
+	overflow: hidden;    
 }
 
 .event_search_bar .subscribe_btn.absolutebtn {

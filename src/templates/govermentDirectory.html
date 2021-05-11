@@ -1,0 +1,149 @@
+<#if entries?has_content>
+<#assign 
+	myanmarNumberConversionService= serviceLocator.findService("mnp.convert.myanmar.numeric.MyanmarNumberConversionService")
+		/>
+
+
+<div class="nation-detail-layout2 government-directory" id="main-content" role="main" style="background-color:#f3f3f9">
+    <div class="government-count font18"><span>${languageUtil.format(request,"mnp-search-about-x-results","<span class='blue'>" + myanmarNumberConversionService.convertNumber(themeDisplay.getLocale(),renderRequest.getAttribute("total")) + "</span>",false)}</span>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 bigcardstyle">
+        <div class="">
+            <#list entries as curEntry>
+            <#assign rootElement = saxReaderUtil.read(curEntry.getAssetRenderer().getArticle().getContentByLocale(locale)).getRootElement()>
+            <#assign assetRenderer = curEntry.getAssetRenderer() />
+            <#assign
+                sizeRootElement = rootElement.elements()?size
+                sizeEntries = entries?size
+            />
+            
+            
+            <div class="col-md-12 col-sm-12 col-xs-12 smallcardstyle">
+                <#assign
+                Structure = curEntry.getAssetRenderer().getArticle().getDDMStructure()
+                DepartmentName = Structure.getFieldLabel("DepartmentName", locale)
+                Phone = Structure.getFieldLabel("Phone", locale)
+                Email = Structure.getFieldLabel("Email", locale)
+                OfficeAddress = Structure.getFieldLabel("OfficeAddress", locale)
+            />
+                <#list rootElement.elements() as dynamicElement>
+                    
+                    <#if "DepartmentName" == dynamicElement.attributeValue("name") >
+                        <#assign departmentNameValue = dynamicElement.element("dynamic-content").getData() />
+                    </#if >
+                    
+                    <#if "Phone" == dynamicElement.attributeValue("name") >
+                        <#assign phone = dynamicElement.element("dynamic-content").getData() />
+                    </#if>
+                    <#if "Email" == dynamicElement.attributeValue("name") >
+                        <#assign email = dynamicElement.element("dynamic-content").getData() />
+                    </#if>
+                    <#if "OfficeAddress" == dynamicElement.attributeValue("name") >
+                        <#assign officeAddress = dynamicElement.element("dynamic-content").getData() />
+                    </#if>
+                </#list>
+
+                <div class="government-text">
+                    <div class="name-height row">
+                        <div class="col-2">
+                            <span class="bold">${DepartmentName}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+                            </span>
+                        </div>
+                        <div class="col-10">
+                            <span>${departmentNameValue}</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-2">
+                            <span class="bold">${Phone}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
+                            </span>
+                        </div>
+                        <div class="col-10">
+                            <span> ${phone} </span>
+                        </div>
+                    </div>
+
+                    <div class="row pdtop10">
+                        <div class="col-2">
+                            <span class="bold">${Email} : </span>
+                        </div>
+                        <div class="col-10">
+                            <span>${email}</span>
+                        </div>
+                    </div>
+
+                    <div class="row pdtop10">
+                        <div class="col-2">
+                            <span class="bold">${OfficeAddress}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
+                            </span>
+                        </div>
+                        <div class="col-10">
+                            <span>${officeAddress}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </#list>
+
+        </div>
+    </div>
+</div>
+
+<#else>
+ <h1>${themeDisplay.translate("mnp-no-data-available")}</h1>
+</#if>
+
+<style>
+
+    span {
+        line-height: normal;
+    }
+
+    .blue {
+        color: blue;
+    }
+
+    .bigcardstyle {
+        background-color: #fff;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-top: 1px solid #e5e5e547 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .smallcardstyle {
+        padding: 20px 20px !important;
+        border-bottom: 1px solid #bfddde0d !important;
+        box-shadow: inset 0px -11px 18px -9px #a0d0ce66;
+    }
+</style>
+
+
+<script>
+
+    var mainContent = document.getElementsByClassName("government-directory")[0];
+    if (mainContent != null) {
+        mainContent.style.position = "relative";
+        mainContent.style.top = "-30px";
+    }
+
+    var ele = document.getElementById("form_wrapper");
+    if (ele != null) {
+        ele.style.width = "50%";
+        ele.style.top = "25px"
+        ele.style.left = "-190px";
+    }
+
+    var directorySearch = document.getElementsByClassName("width77percent")[0];
+    if (directorySearch != null) {
+        directorySearch.style.position = "relative";
+        directorySearch.style.left = "389px";
+        directorySearch.style.top = "-44px"
+        directorySearch.style.width = "50%";
+
+    }
+
+</script>

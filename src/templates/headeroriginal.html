@@ -1,0 +1,103 @@
+<div class = "mnp-portal-header">	
+	<div class="logo_search_bar">      
+	    <div id="stickylogomenubar">
+
+        <div class="banner_menu_2_top_row">
+              <div class="container-fluid">
+
+                <div class="nav_right_section">
+
+						<ul class="lang_select">
+							<li>
+								<span class="hideunder480">${theme_display.translate("mnp-language-text")}</span>
+								&nbsp;
+								<a href="/en${i18n_url}" class="skyblue_color">ENG</a>
+									&nbsp;/&nbsp;
+								<a href="/my${i18n_url}" class="dark_orange">မြန်မာ</a>								
+							</li>
+						</ul>						
+						
+					</div>
+            </div>
+    </div>
+
+
+            <div class="container-fluid">  
+				<div class="col-xs-12">
+					<a href="${company_url}"><img src="${images_folder}/State_seal_of_Myanmar.svg_small.png" class="floatleft"></a>
+					<div class="titefontWrapper floatleft">
+						<h4 class="titlefont">MYANMAR <span class="boldfontweight">NATIONAL PORTAL</span></h4>
+
+
+					</div>
+				</div>                     
+
+                <!-- SEARCH READ DOCUMENTATION -->
+                <!-- <ul class="cd-header-buttons visible-search-block">
+                  <li>
+                      <a class="cd-search-trigger" href="#cd-search"><span></span></a>
+                  </li>
+                </ul>  -->
+                <!-- cd-header-buttons -->
+
+                <!-- <div id="cd-search" class="cd-search">
+                  <form class="form-search" id="searchForm" action="page-search-results.html" method="get">
+                    <input type="text" value="" name="q" id="q" placeholder="Search...">
+                  </form>
+                </div> -->
+
+                <!-- collapse btn -->
+                <nav class="navbar navbar-default mynav" style="clear: both;min-height: auto;">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar top_bar"></span>
+							<span class="icon-bar middle_bar"></span>
+							<span class="icon-bar bottom_bar"></span>
+						</button>
+					</div>
+				</nav>
+                <!-- collapse btn end -->
+            </div>  
+            <!-- container end-->
+
+           <#include "${full_templates_path}/navigation.ftl" />
+    </div>
+
+        <!-- search form -->
+    <div id="main_advanced_search_wrapper" class="display_flex event_search_bar nopadding row sub">
+        <div class="container-fluid">
+
+            <div class="width50 search-holder">
+                <div class="searchbar">
+                  <input type="text" placeholder="Keyword">
+                  <!-- <span class="fa fa-search"></span> -->
+                </div>           
+            </div>
+
+            <div class="search-holder cate_dropdown">
+              <div class="searchbar">
+                   <!--  <input type="text" placeholder="Emergency Contact Number" class="whitetext"> -->
+                   <select id="cate_select">       
+                      <option>About Myanmar</option>       
+                      <option>Information</option>
+                      <option>Services</option>
+                      <option>Government</option>
+                      <option>Resources</option>
+                      <option>News & Media</option>
+                   </select>
+                    <span class="cus_cate_select cus_select full-width">Categories</span>
+              </div>           
+            </div>       
+
+            <a href="#" class="subscribe_btn">Search</a> 
+            </div>
+
+      </div>
+     <!-- search form end -->
+
+    
+    </div>     
+    <!-- logo_search_bar end-->
+</div>

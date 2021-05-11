@@ -22,6 +22,9 @@
   }
 }
 
+.portlet-body .navbar .navbar-collapse {
+	display: block !important;
+}
 
 // Navbar heading
 //
@@ -46,7 +49,7 @@
 // To start (on mobile devices) the navbar links, forms, and buttons are stacked
 // vertically and include a `max-height` to overflow in case you have too much
 // content for the user's viewport.
-
+    
 .navbar-collapse {
   overflow-x: visible;
   padding-right: $navbar-padding-horizontal;
@@ -60,13 +63,14 @@
     overflow-y: auto;
   }
 
+	
   @media (min-width: $grid-float-breakpoint) {
     width: auto;
     border-top: 0;
     box-shadow: none;
 
     &.collapse {
-      display: block !important;
+/*       display: block !important; */
       height: auto !important;
       padding-bottom: 0; // Override default setting
       overflow: visible !important;

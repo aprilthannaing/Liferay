@@ -1,0 +1,52 @@
+<div class="home-layout-v2" id="main-content" role="main">
+    <div style="background-color: #f3f3f9;">
+        <div class="mainsliderwrapper" id="column-1">
+            $processor.processColumn("column-1", "portlet-column-content portlet-column-content-first")
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="column-2">
+        <div class="container-fluid maincontent nopaddingleft">
+            $processor.processColumn("column-2", "portlet-column-content portlet-column-content-only")
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="column-3" style="background-color: #f3f3f9;">
+        <div class="container-fluid maincontent nopaddingleft">
+            $processor.processColumn("column-3", "portlet-column-content portlet-column-content-only")
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="container-fluid nopaddingleft">
+            <!--  department_section -->
+            <div id="hometab1">
+                <div class="tender-vacan">
+                    <ul class="nav nav-pills">
+                        <li class="active">
+                            <a href="#1a" data-toggle="tab"
+                                class="fontsize18 bold">${themeDisplay.translate('mnp-tenders-title')}</a>
+                        </li>
+                        <li><a href="#2a" data-toggle="tab"
+                                class="fontsize18 bold">${themeDisplay.translate('mnp-jobs-and-vacancies-title')}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content clearfix">
+                    <div class="tab-pane active" id="1a">
+                        <div>
+                            $processor.processColumn("column-5", "portlet-column-content portlet-column-content-only")
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="2a">
+                        <div>
+                            $processor.processColumn("column-6", "portlet-column-content portlet-column-content-only")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="column-7" style="background-color: #f3f3f9;">
+        $processor.processColumn("column-7", "portlet-column-content portlet-column-content-last")
+    </div>
+</div>

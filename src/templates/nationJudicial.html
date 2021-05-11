@@ -1,0 +1,74 @@
+<section id="team" class="nation-detail-pd section-bg">
+    <div class="container-fluid">
+
+        <div class="row">
+
+
+            <#if entries?has_content>
+                <#assign utilLocalService=serviceLocator.findService("service.service.UtilLocalService")
+                    base32Service=serviceLocator.findService("mnp.custom.service.base32.Base32Service")
+                    localizationService=serviceLocator.findService("com.liferay.portal.kernel.util.LocalizationUtil")
+                    childrenFriendlyUrlList=utilLocalService.getFriendlyUrlsByParentLayoutIdAsLocal(layout.getLayoutId(),themeDisplay.getCompanyId(),themeDisplay.getScopeGroupId())
+                    newHash={}
+                    categoryIds=utilLocalService.getCategoryByFriendlyUrlAsLocal(base32Service.encodeBase32(themeDisplay.getLayout().getFriendlyURL(locale)))
+                    categoryId=categoryIds[0]?number
+                    listResult=utilLocalService.getCategoryListByParentCategoryIdAsLocal(categoryId,
+                    themeDisplay.getCompanyId(), themeDisplay.getScopeGroupId(), "isDisplay" ,
+                    base32Service.encodeBase32("true")) />
+                <#list listResult as result>
+                    <#assign newHash=newHash + {result[0]:{}} />
+
+                </#list>
+
+                <#list listResult as result>
+                    <#assign myHash={ 'title' :result[1], result[3]:result[4] } />
+                    <#list newHash?keys as key>
+                        <#if key?string==result[0]?string>
+                            <#if newHash[key]?has_content>
+                                <#assign value=newHash[key] value=value + myHash newHash=newHash + {key:value} />
+
+                                <#else>
+                                    <#assign newHash=newHash + {key:myHash} />
+
+                            </#if>
+                        </#if>
+                    </#list>
+                </#list>
+                <#list childrenFriendlyUrlList as childFriendlyUrl>
+                    <#list newHash?keys as key>
+                        <#assign value=newHash[key]>
+                            <#list value?keys as k>
+                                <#if k?string=="image">
+                                    <#assign urlImage=base32Service.decodeBase32(value[k])>
+                                </#if>
+                                <#if k?string=="title">
+                                    <#assign title=value[k]>
+                                </#if>
+                                <#if k?string=="link">
+                                    <#assign link=base32Service.decodeBase32(value[k])>
+                                </#if>
+                            </#list>
+
+                            <#if link==childFriendlyUrl>
+                                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos-delay="100">
+                                    <div class="nation-detail">
+                                        <a href="${link}">
+                                            <div class="nation-detail-img popup-gallery">
+                                                <img src="http://mnp.gov.mm/o/mnp-theme/images/Hluttaw.png" class="img-fluid" alt="">
+                                            </div>
+                                            <div class="nation-detail-info">
+                                                <span>${localizationService.getLocalization(title,locale)}</span>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </#if>
+                    </#list>
+                </#list>
+                <#else>
+                    <h1>${themeDisplay.translate("mnp-no-data-available")}</h1>
+            </#if>
+        </div>
+    </div>
+</section>
