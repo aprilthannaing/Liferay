@@ -1,14 +1,10 @@
 /**
-* Lexicon 0.2.6
+* Lexicon 1.0.24
 *
-* Copyright 2016, Liferay, Inc.
+* Copyright 2017, Liferay, Inc.
 * All rights reserved.
 * MIT license
 */
-@function calcLexiconIconPadding($monospaced-size, $icon-size) {
-	@return floor(($monospaced-size - $icon-size) / 2);
-}
-
 .lexicon-icon {
 	display: inline-block;
 	fill: currentColor;
@@ -16,10 +12,6 @@
 	transform: translateZ(0);
 	vertical-align: middle;
 	width: $lexicon-icon-size;
-
-	&.icon-monospaced {
-		padding: calcLexiconIconPadding($icon-monospaced-size, $lexicon-icon-size);
-	}
 }
 
 .lexicon-icon-sm {
@@ -37,10 +29,22 @@
 	width: $lexicon-icon-lg-size;
 }
 
+%scale-lexicon-icon {
+	height: 1em;
+	margin-top: -0.13em;
+	width: 1em;
+}
+
+.scale-lexicon-icon.lexicon-icon,
+.scale-lexicon-icon .lexicon-icon {
+	@extend %scale-lexicon-icon;
+}
+
 // Collapse Icon
 
 a.collapse-icon {
-	padding-right: 45px;
+	padding-left: $collapse-icon-padding-left;
+	padding-right: $collapse-icon-padding-right;
 }
 
 .collapse-icon-closed,
@@ -55,9 +59,11 @@ a.collapse-icon {
 .collapse-icon {
 	.collapse-icon-closed,
 	.collapse-icon-open {
+		bottom: $collapse-icon-position-bottom;
+		left: $collapse-icon-position-left;
 		position: absolute;
-		right: 15px;
-		top: 10px;
+		right: $collapse-icon-position-right;
+		top: $collapse-icon-position-top;
 
 		[class^="icon-"],
 		[class*=" icon-"] {
@@ -94,7 +100,8 @@ a.collapse-icon {
 		margin-top: 0;
 		top: 50%;
 
-		@include transform(translateY(-50%));
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
 	}
 }
 
@@ -103,17 +110,11 @@ a.collapse-icon {
 a .icon-monospaced,
 .icon-monospaced {
 	display: inline-block;
-}
 
-.icon-monospaced {
 	@include monospace($icon-monospaced-size);
 
 	text-align: center;
-
-	&:focus,
-	&:hover {
-		text-decoration: none;
-	}
+	vertical-align: middle;
 }
 
 .icon-monospaced {
@@ -123,7 +124,7 @@ a .icon-monospaced,
 
 		&:before {
 			position: relative;
-			top: -1px;
+			top: -$btn-border-width;
 		}
 	}
 
@@ -165,20 +166,62 @@ a .icon-monospaced,
 	}
 }
 
-// Skins
+// Glyphicon Icon Monospaced
 
-.help-icon {
-	@extend .icon-monospaced;
+.icon-monospaced {
+	.glyphicon {
+		display: inline-block;
 
-	border-radius: 100px;
+		@include monospace($icon-monospaced-size);
+
+		text-align: center;
+	}
 }
 
+// Lexicon Icon Monospaced
+
+.icon-monospaced {
+	&.lexicon-icon {
+		padding: lx-icon-padding($icon-monospaced-size, $lexicon-icon-size);
+	}
+
+	.lexicon-icon {
+		display: block;
+
+		@include monospace($icon-monospaced-size);
+
+		padding: lx-icon-padding($icon-monospaced-size, $lexicon-icon-size);
+	}
+}
+
+// Help Icon
+
+.help-icon {
+	border-radius: 100px;
+	display: inline-block;
+
+	@include monospace($icon-monospaced-size);
+
+	text-align: center;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+	&.icon-monospaced {
+		vertical-align: baseline;
+	}
+}
+
+// Skins
+
 .help-icon-default {
-	background-color: $gray-lighter;
-	color: $gray-light;
+	background-color: $help-icon-default-bg;
+	color: $help-icon-default-color;
 
 	&:focus,
 	&:hover {
-		color: $gray-dark;
+		color: $help-icon-default-hover-color;
 	}
 }

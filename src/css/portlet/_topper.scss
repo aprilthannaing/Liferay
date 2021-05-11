@@ -70,7 +70,7 @@
 	}
 }
 
-.signed-in .portlet {
+.portlet {
 	&:hover, &.focus {
 		> .portlet-content-editable {
 			@include media-query(sm) {
@@ -98,7 +98,7 @@
 	padding: 10px;
 }
 
-// Portlet Topper
+/* ---------- Portlet topper ---------- */
 
 .portlet-actions {
 	float: right;
@@ -156,9 +156,9 @@
 	}
 }
 
-// Portlet Controls in Mobile
+/* ---------- Portlet controls in mobile ---------- */
 
-.controls-visible.signed-in {
+.controls-visible {
 	.portlet-content-editable {
 		@include media-query(null, $screen-xs-max) {
 			border-color: $portlet-topper-border;

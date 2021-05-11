@@ -1,7 +1,7 @@
 /**
-* Lexicon 0.2.6
+* Lexicon 1.0.24
 *
-* Copyright 2016, Liferay, Inc.
+* Copyright 2017, Liferay, Inc.
 * All rights reserved.
 * MIT license
 */
@@ -28,15 +28,15 @@
 .aspect-ratio-center img {
 	left: 50%;
 	right: auto;
-
-	@include transform(translateX(-50%));
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 
 .aspect-ratio-middle img {
 	bottom: auto;
 	top: 50%;
-
-	@include transform(translateY(-50%));
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
 .aspect-ratio-right img {
@@ -47,6 +47,11 @@
 .aspect-ratio-top img {
 	bottom: auto;
 	top: 0;
+}
+
+.aspect-ratio-center.aspect-ratio-middle img {
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 .aspect-ratio-3-to-2 {

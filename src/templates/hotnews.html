@@ -1,0 +1,114 @@
+<div class="hotnews">
+	<div class="row foot-hotnews">
+		<div class="col-1"> <span class="hotnewstext">HOT NEWS</span></div>
+		<div class="col-1 monthtext"> <span>January 4, </span> </div>
+		<div class="col-10" id="hotnews">
+			<div class="marquee" id="marquee2020">
+				<ul class="scroll-left">
+					<#if entries?has_content>
+						<#list entries as curEntry>
+							<#assign assetRenderer=curEntry.getAssetRenderer() />
+							<#assign urlTitle=assetRenderer.getUrlTitle() />
+							<#assign viewURL=assetPublisherHelper.getAssetViewURL(renderRequest, renderResponse,
+								curEntry) />
+							<#if viewURL?has_content>
+								<li>
+									<a href="${viewURL?replace('mm/.+/content/', 'mm/news-media/news/latest-news/-/asset_publisher/idasset354/content/', 'r')}ent/"
+										)}" target="_blank"><span
+											class="hotnewtext">${curEntry.getTitle(locale)}</span></a>
+								</li>
+								&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+								<#else>
+									<li><span class="hotnewtext">${curEntry.getTitle(locale)}</span>
+									</li>
+									&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+							</#if>
+						</#list>
+						<#else>
+								<#list 1..10 as x>
+								<li> <a href="https://mnp.gov.mm/" target="_blank">
+								<span class="hotnewtext">mnp.gov.mm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mnp.gov.mm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mnp.gov.mm</span>
+
+									</a>
+								</li>
+								&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+							</#list>
+					</#if>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<img id="scrollTop2020" style="position: fixed;right: 104px;bottom: 10px;opacity: 1;padding: 0% 0% 2.5% 0%;"
+	src="https://img.icons8.com/ios-filled/50/000000/circled-chevron-up.png" />
+
+<style>
+	ul.marqueeul li {
+		display: inline-block;
+		padding: 17px 20px;
+		height: 100%;
+		font-size: 18px;
+	}
+
+	.hotnewtext {
+		color: #f2f2f2;
+		font-size: 15px;
+	}
+
+	#hotnews {
+		overflow: hidden;
+		position: relative;
+		display: block;
+	}
+
+.scroll-left li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    transform: translateX(100%);
+    animation: scroll-left 20s linear infinite;
+    font-size: 17px;
+}
+</style>
+
+<script type="text/javascript">
+
+
+
+	jQuery(document).ready(function () {
+		jQuery("#marquee2020").marquee({
+			duration: 12000,
+			direction: 'left',
+			duplicated: true,
+			pauseOnHover: true
+		});
+		var scrollTop = jQuery("#scrollTop2020");
+
+		jQuery(window).scroll(function () {
+			// declare variable
+			var topPos = jQuery(this).scrollTop();
+
+			// if user scrolls down - show scroll to top button
+			if (topPos > 100) {
+				jQuery(scrollTop).css("opacity", "1");
+
+			} else {
+				jQuery(scrollTop).css("opacity", "0");
+			}
+
+		}); // scroll END
+
+		//Click event to scroll to top
+		jQuery(scrollTop).click(function () {
+			jQuery('html, body').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+
+		}); // click() scroll top EMD
+
+	});
+</script>
