@@ -1,7 +1,7 @@
 /**
-* Lexicon 0.2.6
+* Lexicon 1.0.24
 *
-* Copyright 2016, Liferay, Inc.
+* Copyright 2017, Liferay, Inc.
 * All rights reserved.
 * MIT license
 */
@@ -9,8 +9,7 @@
 
 .loading-icon,
 .loadingmask-message .loadingmask-message-content {
-	@include animation(loading-icon 1.7s infinite ease);
-
+	animation: loading-icon 1.7s infinite ease;
 	border-radius: 50%;
 	display: block;
 	font-size: 16px;
@@ -33,11 +32,11 @@
 	}
 }
 
-@include keyframes(loading-icon) {
+@keyframes loading-icon {
 	0% {
 		@include trailing-shadow(0, -0.83em, $loading-icon-color);
 
-		@include transform(rotate(0));
+		transform: rotate(0);
 	}
 
 	2%, 96% {
@@ -76,7 +75,7 @@
 	100% {
 		@include trailing-shadow(0, -0.83em);
 
-		@include transform(rotate(360deg));
+		transform: rotate(360deg);
 	}
 }
 
@@ -122,29 +121,55 @@
 }
 
 @keyframes loading-icon-linear {
-  0% {
-	transform: rotate(0deg);
-  }
+	0% {
+		transform: rotate(0deg);
+	}
 
-  10.99% {
-  	border-bottom-color: transparent;
-  }
+	10.99% {
+		border-bottom-color: transparent;
+	}
 
-  11% {
-  	border-bottom-color: $loading-icon-linear-color;
-  }
+	11% {
+		border-bottom-color: $loading-icon-linear-color;
+	}
 
-  66% {
-	border-bottom-color: $loading-icon-linear-color;
-  }
+	66% {
+		border-bottom-color: $loading-icon-linear-color;
+	}
 
-  66.6% {
-	border-bottom-color: transparent;
-  }
+	66.6% {
+		border-bottom-color: transparent;
+	}
 
-  66.6%, 100% {
-	transform: rotate(360deg);
-  }
+	66.6%, 100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes loading-icon-linear {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	10.99% {
+		border-bottom-color: transparent;
+	}
+
+	11% {
+		border-bottom-color: $loading-icon-linear-color;
+	}
+
+	66% {
+		border-bottom-color: $loading-icon-linear-color;
+	}
+
+	66.6% {
+		border-bottom-color: transparent;
+	}
+
+	66.6%, 100% {
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes loading-icon-spin {
@@ -159,6 +184,7 @@
 
 // Variations
 
+a.btn,
 button {
 	> .loading-icon {
 		// This is specifically in a less specific selector
@@ -166,13 +192,18 @@ button {
 		// `loading-icon-{size}` classes
 		& {
 			font-size: 1em;
+			margin-right: 0.8em;
+			margin-top: 0;
+		}
+
+		&.linear {
+			margin-right: 0.2em;
+			margin-top: -0.2em;
 		}
 
 		&, &.linear {
 			display: none;
 			margin-bottom: 0;
-			margin-right: 0.8em;
-			margin-top: 0;
 			vertical-align: middle;
 		}
 	}

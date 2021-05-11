@@ -1,0 +1,94 @@
+<#if entries?has_content>
+    <section class="team tender-bg">
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <#assign vacancyType="" closingDate="" link="" upload="" value1='["value 1"]' value2='["value 2"]'
+                    url="#" />
+
+                <#list entries as curEntry>
+                    <#assign
+                        rootElement=saxReaderUtil.read(curEntry.getAssetRenderer().getArticle().getContentByLocale(locale)).getRootElement()>
+                        <#list rootElement.elements() as dynamicElement>
+                            <#if "closingDate"==dynamicElement.attributeValue("name")>
+                                <#assign closingDate=dynamicElement.element("dynamic-content").getData()
+                                    closingDateFormat=dateUtil.parseDate("yyyy-MM-dd", closingDate, locale) />
+                            </#if>
+                            <#if "vacancyType"==dynamicElement.attributeValue("name")>
+                                <#assign vacancyType=dynamicElement.element("dynamic-content").getData()>
+                            </#if>
+                            <#if "link"==dynamicElement.attributeValue("name")>
+                                <#assign link=dynamicElement.element("dynamic-content").getData()>
+                            </#if>
+                            <#if "upload"==dynamicElement.attributeValue("name")>
+                                <#assign upload=dynamicElement.element("dynamic-content").getData()>
+                            </#if>
+                        </#list>
+
+
+
+
+
+                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos-delay="100">
+
+                            <#if (vacancyType==value1)>
+                                <#assign url=link>
+                                    <#elseif (vacancyType==value2)>
+                                        <#assign url=upload>
+                            </#if>
+                            <#assign assetCategories=curEntry.getCategories() ministry="" />
+                            <#if assetCategories?has_content>
+                                <#list assetCategories as category>
+                                    <#assign vocabularyId=category.getVocabularyId()>
+                                        <#if (vocabularyId==80291)>
+                                            <#assign ministry=category.getTitle(locale)>
+                                                <#break>
+                                        </#if>
+                                </#list>
+                            </#if>
+
+                            <div class="tender">
+                                <div class="tender-upper">
+                                    <div class="row">
+                                        <div class="col-2">
+
+                                            <i class="bi bi-file-earmark-text tender-icon"></i>
+                                        </div>
+
+                                        <div class="col-10">
+
+                                            <p class="tender-info-title-text">${curEntry.getTitle(locale)} </p>
+
+                                            <div class="nameDate">
+                                                <span class="blue-text font14"> ${ministry}
+                                                </span><br>
+                                                <span class="font14"><span
+                                                        class="bold">${themeDisplay.translate("mnp-closing-date")}</span>:${dateUtil.getDate(closingDateFormat,
+                                                    "dd, MMM yyyy ", locale)} </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tender-info">
+                                    <a href="${url}" target="_blank"><span
+                                            class="tender-info-text">အသေးစိတ်ဖတ်ရှုရန်</span></a>
+                                </div>
+                            </div>
+                        </div>
+                </#list>
+
+
+                <div class="tender-continue">
+                    <a href="/vacancies"><span class="continueText">
+                            ${themeDisplay.translate("mnp-home-view-all")}
+                        </span></a>
+                </div>
+            </div>
+
+
+    </section>
+
+    <#else>
+        <h1>${themeDisplay.translate("mnp-no-data-available")}</h1>
+</#if>

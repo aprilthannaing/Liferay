@@ -1,0 +1,79 @@
+<#if entries?has_content>
+    <#assign portlet_display=portletDisplay />
+    <#assign
+        detailLinkJournalArticleService=serviceLocator.findService("mnp.detail.link.generator.journalarticle.DetailLinkJournalArticleService")
+        portlet_title=htmlUtil.escape(portlet_display.getTitle()) viewInContext=!(assetLinkBehavior="showFullContent"
+        ) />
+
+    <section>
+        <div class="sencond-bg">
+            <div class="announcement">
+
+                <i class="bi bi-bookmark-fill bookmarkicon"></i>
+
+                <div class="text-center">
+                    <span class="bold font18">${portlet_title}</span>
+                </div>
+
+                <div class="row">
+
+                    <#list entries as entry>
+                        <#assign title=entry.getTitle(locale)
+                            viewURL=detailLinkJournalArticleService.getDetailLink(renderRequest, renderResponse, entry
+                            ,viewInContext,themeDisplay) assetRenderer=entry.getAssetRenderer()
+                            date=assetRenderer.getDisplayDate()?date />
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch ln" data-aos-delay="100">
+
+                            <div class="row">
+                                <div class="col-1"><i class="bi bi-megaphone"></i>
+                                </div>
+                                <div class="col-11">
+                                    <div class="each-announcement">
+                                        <div class="announcement-span">
+                                            <a href="${viewURL?replace(" /web/guest", "" )}" class="topmargin0"> <span
+                                                    class="announcement-title">${title}</span>
+                                            </a>
+                                        </div>
+
+                                        <#assign assetCategories=entry.getCategories() ministry="" />
+                                        <#if assetCategories?has_content>
+                                            <#list assetCategories as category>
+                                                <#assign vocabularyId=category.getVocabularyId()>
+                                                    <#if (vocabularyId==80291)>
+                                                        <#assign ministry=category.getTitle(locale)>
+                                                            <#break>
+                                                    </#if>
+                                            </#list>
+                                        </#if>
+
+                                        <div class="announcement-date-text">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                            <span>${ministry} </span><br>
+                                            <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                                            <span>${dateUtil.getDate(date, "MMM dd,yyyy", locale)}</span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </#list>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="announcement-continue">
+            <a href="/news-media/announcements"><span class="continueText">
+                    ${themeDisplay.translate("mnp-home-more")}
+                </span></a>
+        </div>
+    </section>
+
+    <#else>
+        <h1>${themeDisplay.translate("mnp-no-data-available")}</h1>
+</#if>

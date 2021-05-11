@@ -3,8 +3,22 @@
 $bg-color: #F5F7F8;
 $solid-color: #47647A;
 
-body {
-	background-color: $bg-color;
+@import "custom_common";
+@import url("fonts.css");
+@import "magnific-popup";
+@import "custom_style_outer";
+.mnp_body {
+	/* @import "bootstrap"; */
+	@import "custom_reset_core";
+	@import "custom_portlet"; 
+	@import "slick";
+	@import "slick-theme";	
+	@import "style";
+	@import "custom_style";
+ 	@import "md_style";
+	@import "icons";	
+	@import "font-awesome";
+	
 }
 
 .portlet-topper {
@@ -80,11 +94,6 @@ body {
 	#banner {
 		padding: 10px 0;
 		position: relative;
-
-		.row {
-			margin-left: 15px;
-			margin-right: 15px;
-		}
 
 		a:active, a:hover, a:focus {
 			text-decoration: none;
