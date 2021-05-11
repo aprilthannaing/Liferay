@@ -1,14 +1,18 @@
 /**
-* Lexicon 0.2.6
+* Lexicon 1.0.24
 *
-* Copyright 2016, Liferay, Inc.
+* Copyright 2017, Liferay, Inc.
 * All rights reserved.
 * MIT license
 */
+@import "variables/globals";
+
+@import "variables/alerts";
 @import "variables/breadcrumbs";
 @import "variables/buttons";
 @import "variables/cards";
 @import "variables/dropdowns";
+@import "variables/forms";
 @import "variables/figures";
 @import "variables/icons";
 @import "variables/labels";
@@ -19,9 +23,12 @@
 @import "variables/loaders";
 @import "variables/nameplates";
 @import "variables/navs";
+@import "variables/navbar";
+@import "variables/pagination";
 @import "variables/panels";
 @import "variables/progress-bars";
 @import "variables/toolbars";
+@import "variables/side-navigation";
 @import "variables/sidebar";
 @import "variables/stickers";
 @import "variables/tables";
@@ -29,3 +36,5 @@
 @import "variables/toggle-card";
 @import "variables/toggle-switch";
 @import "variables/tooltip";
+@import "variables/type";
+@import "variables/user-icons";

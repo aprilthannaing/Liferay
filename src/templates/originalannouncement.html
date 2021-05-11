@@ -1,0 +1,36 @@
+<#if entries?has_content>
+    <#assign portlet_display=portletDisplay />
+    <#assign
+        detailLinkJournalArticleService=serviceLocator.findService("mnp.detail.link.generator.journalarticle.DetailLinkJournalArticleService")
+        portlet_title=htmlUtil.escape(portlet_display.getTitle()) viewInContext=!(assetLinkBehavior="showFullContent"
+        ) />
+    <h2>${portlet_title}</h2>
+    <ul>
+        <#list entries as entry>
+            <#assign title=entry.getTitle(locale) viewURL=detailLinkJournalArticleService.getDetailLink(renderRequest,
+                renderResponse, entry ,viewInContext,themeDisplay) assetRenderer=entry.getAssetRenderer()
+                date=assetRenderer.getDisplayDate()?date />
+            <li>
+                <a href="${viewURL?replace(" /web/guest", "" )}" class="topmargin0">
+                    <p>${title}</p>
+                </a>
+                <#assign assetCategories=entry.getCategories() ministry="" />
+                <#if assetCategories?has_content>
+                    <#list assetCategories as category>
+                        <#assign vocabularyId=category.getVocabularyId()>
+                            <#if (vocabularyId==80291)>
+                                <#assign ministry=category.getTitle(locale)>
+                                    <#break>
+                            </#if>
+                    </#list>
+                </#if>
+                <span class="redcolor">${ministry} / ${dateUtil.getDate(date, "MMM dd,yyyy", locale)}</span>
+            </li>
+        </#list>
+    </ul>
+    <a class="nonebtn" href="/news-media/announcements">
+        <h4 class="readmore">${themeDisplay.translate("mnp-home-more")}</h4>
+    </a> <br /><br />
+    <#else>
+        <h1>${themeDisplay.translate("mnp-no-data-available")}</h1>
+</#if>

@@ -1,0 +1,82 @@
+<style>
+    .img-fluid1 {
+        max-width: 100%;
+        height: auto;
+        min-height: 200px;
+    }
+</style>
+
+
+
+
+
+<#if entries?has_content>
+    <#assign dlAppServiceUtil=serviceLocator.findService("com.liferay.document.library.kernel.service.DLAppService") />
+    <#assign portlet_display=portletDisplay />
+    <#assign portlet_title=htmlUtil.escape(portlet_display.getTitle()) />
+    <section id="team" class="team section-bg">
+        <div class="section-container">
+            <div class="photoandmedia">
+                <div class="row photoText">
+                    <div class="col-6">
+                        <span class="bold">${portlet_title}</span>
+                    </div>
+                    <div class="col-6 videoText">
+                        <span class="bold"> <a style="float:right;color:black" href="/photos-and-videos">
+                                <@liferay_ui["message"] key="mnp-explore-more" />
+                            </a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <#list entries as entry>
+                    <#assign assetRenderer=entry.getAssetRenderer() entryTitle=entry.getTitle(locale)
+                        entrySummary=entry.getSummary(locale) journalArticle=assetRenderer.getArticle()
+                        document=saxReaderUtil.read(journalArticle.getContent()) rootElement=document.getRootElement()
+                        thumbnail="" image="" />
+                    <#list rootElement.elements() as dynamicElement>
+                        <#if "image"==dynamicElement.attributeValue("name")
+                            || "photo"==dynamicElement.attributeValue("name")>
+                            <#assign image=dynamicElement.element("dynamic-content") thumbnail=thumbnail +
+                                dynamicElement.element("dynamic-content").getData()>
+                        </#if>
+                    </#list>
+
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img popup-gallery">
+
+                                <a href="${image.getData()}">
+                                    <#assign fileEntryIdNumber=image.attributeValue("fileEntryId") />
+                                    <#if fileEntryIdNumber?? && fileEntryIdNumber?has_content>
+                                        <#assign fileEntryIdNumber=image.attributeValue("fileEntryId")?number />
+                                        <#attempt>
+                                            <@adaptive_media_image["img"]
+                                                fileVersion=dlAppServiceUtil.getFileEntry(fileEntryIdNumber).getFileVersion()
+                                                class="img-fluid1" alt="" />
+                                            <#recover>
+                                                <img src="${image.getData()}" class="img-fluid1" alt="">
+                                        </#attempt>
+                                        <#else>
+                                            <img src="${image.getData()}" class="img-fluid1" alt="">
+                                    </#if>
+
+                                </a>
+
+                            </div>
+                            <div class="member-info">
+                                <span>${stringUtil.shorten(entryTitle,40)}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </#list>
+            </div>
+        </div>
+    </section>
+
+    <#else>
+        <h1>${themeDisplay.translate("mnp-no-data-available")}</h1>
+</#if>

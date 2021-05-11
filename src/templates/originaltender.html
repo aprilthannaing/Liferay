@@ -1,0 +1,53 @@
+<#if entries?has_content>
+    <div class="tab-pane fade in active" id="tender">
+        <ul>
+            <#list entries as curEntry>
+                <#assign
+                    rootElement=saxReaderUtil.read(curEntry.getAssetRenderer().getArticle().getContentByLocale(locale)).getRootElement()
+                    tenderType="" />
+                <#list rootElement.elements() as dynamicElement>
+                    <#if "closingDate"==dynamicElement.attributeValue("name")>
+                        <#assign closingDate=dynamicElement.element("dynamic-content").getData()/>
+                    </#if>
+                    <#if "tenderType"==dynamicElement.attributeValue("name")>
+                        <#assign tenderType=dynamicElement.element("dynamic-content").getData()>
+                    </#if>
+                    <#if "link"==dynamicElement.attributeValue("name")>
+                        <#assign link=dynamicElement.element("dynamic-content").getData()>
+                    </#if>
+                    <#if "upload"==dynamicElement.attributeValue("name")>
+                        <#assign upload=dynamicElement.element("dynamic-content").getData()>
+                    </#if>
+                </#list>
+                <li>
+                    <#assign value1='["value 1"]' value2='["value 2"]' url="#" />
+                    <#if (tenderType==value1)>
+                        <#assign url=link>
+                            <#elseif (tenderType==value2)>
+                                <#assign url=upload>
+                    </#if>
+                    <#assign assetCategories=curEntry.getCategories() ministry="" />
+                    <#if assetCategories?has_content>
+                        <#list assetCategories as category>
+                            <#assign vocabularyId=category.getVocabularyId()>
+                                <#if (vocabularyId==80291)>
+                                    <#assign ministry=category.getTitle(locale)>
+                                        <#break>
+                                </#if>
+                        </#list>
+                    </#if>
+                    <a href="${url}" target="_blank">
+                        <p>${curEntry.getTitle(locale)}</p>
+                        <span class="redcolor"><b>${themeDisplay.translate("mnp-label-agency")}:</b>
+                            ${ministry}&nbsp;&nbsp;&nbsp;&nbsp;<b>${themeDisplay.translate("mnp-closing-date")}</b>
+                            ${dateUtil.getDate(closingDate, "MMM dd,yyyy", locale)}</span>
+                    </a>
+                </li>
+            </#list>
+        </ul>
+        <br />
+        <a href="/tenders" class="subscribe_btn small">${themeDisplay.translate("mnp-home-view-all")}</a>
+    </div>
+    <#else>
+        <h1>${themeDisplay.translate("mnp-no-data-available")}</h1>
+</#if>

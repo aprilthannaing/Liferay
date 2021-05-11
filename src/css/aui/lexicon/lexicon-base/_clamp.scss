@@ -1,13 +1,14 @@
 /**
-* Lexicon 0.2.6
+* Lexicon 1.0.24
 *
-* Copyright 2016, Liferay, Inc.
+* Copyright 2017, Liferay, Inc.
 * All rights reserved.
 * MIT license
 */
 .clamp-container {
 	left: $table-cell-padding;
-	margin: 0;
+	margin: -2px;
+	padding: 2px;
 	position: absolute;
 	right: $table-cell-padding;
 }
@@ -15,8 +16,8 @@
 .clamp-horizontal {
 	.clamp-container {
 		overflow: hidden;
-
-		@include transform(translateY(-50%));
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
 	}
 }
 
@@ -24,7 +25,7 @@
 .clamp-all-scroll {
 	// IE 10, 11 Hack
 
-	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	@media (-ms-high-contrast: active), (-ms-high-contrast: none) {
 		overflow: hidden;
 	}
 
@@ -36,7 +37,7 @@
 
 		// IE 10, 11 Hack
 
-		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		@media (-ms-high-contrast: active), (-ms-high-contrast: none) {
 			bottom: auto;
 		}
 	}
@@ -45,7 +46,7 @@
 .clamp-all-scroll {
 	// IE 10, 11 Hack
 
-	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	@media (-ms-high-contrast: active), (-ms-high-contrast: none) {
 		overflow: auto;
 	}
 
@@ -53,16 +54,4 @@
 		-webkit-overflow-scrolling: touch;
 		overflow: auto;
 	}
-}
-
-// Table List
-
-th.clamp-horizontal .clamp-container {
-	bottom: $table-cell-padding;
-
-	@include transform(none);
-}
-
-.clamp-horizontal .table-cell-content {
-	vertical-align: middle;
 }

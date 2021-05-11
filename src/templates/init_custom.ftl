@@ -14,6 +14,9 @@ This file allows you to override and define new FreeMarker variables.
 	js_star_rating_file = htmlUtil.escape(portalUtil.getStaticResourceURL(request, "${javascript_folder}/star-rating.js"))
 	js_core_main_file = htmlUtil.escape(portalUtil.getStaticResourceURL(request, "${javascript_folder}/core_main.js"))
 	js_custom_file = htmlUtil.escape(portalUtil.getStaticResourceURL(request, "${javascript_folder}/custom_main.js"))
+	main_js_file = htmlUtil.escape(portalUtil.getStaticResourceURL(request, "${javascript_folder}/main.js"))
+
+
 	
 />
 

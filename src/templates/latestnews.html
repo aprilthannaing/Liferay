@@ -1,0 +1,122 @@
+<section class="news-bg">
+    <#if entries?has_content>
+        <#assign
+            dlAppServiceUtil=serviceLocator.findService("com.liferay.document.library.kernel.service.DLAppService") />
+        <#assign liferayui=PortletJspTagLibs["/META-INF/liferay-ui.tld"] />
+        <#assign portlet_display=portletDisplay />
+        <#assign portlet_title=htmlUtil.escape(portlet_display.getTitle()) />
+        <#assign
+            detailLinkJournalArticleService=serviceLocator.findService("mnp.detail.link.generator.journalarticle.DetailLinkJournalArticleService")
+            entry=entries[0] assetRenderer=entry.getAssetRenderer() className=entry.getClassName()
+            viewInContext=!(assetLinkBehavior="showFullContent" ) entryTitle=entry.getTitle(locale)
+            date=assetRenderer.getDisplayDate()?date journalArticle=assetRenderer.getArticle()
+            document=saxReaderUtil.read(journalArticle.getContent())
+            rootElement=saxReaderUtil.read(entry.getAssetRenderer().getArticle().getContentByLocale(locale)).getRootElement()
+            title=entry.getTitle(locale) viewURL=detailLinkJournalArticleService.getDetailLink(renderRequest,
+            renderResponse, entry ,viewInContext,themeDisplay) />
+
+        <#list rootElement.elements() as dynamicElement>
+            <#if "image"==dynamicElement.attributeValue("name")>
+                <#assign imageContent=dynamicElement.element("dynamic-content")
+                    imageUrl=dynamicElement.element("dynamic-content").getData()>
+            </#if>
+        </#list>
+
+        <div class="section-container">
+
+            <span class="bold font18">${portlet_title}</span>
+
+            <div class="row">
+
+                <#assign assetCategories=entry.getCategories() ministry="" />
+                <#if assetCategories?has_content>
+                    <#list assetCategories as category>
+                        <#assign vocabularyId=category.getVocabularyId()>
+                            <#if (vocabularyId==80291)>
+                                <#assign ministry=category.getTitle(locale)>
+                                    <#break>
+                            </#if>
+                    </#list>
+                </#if>
+
+
+
+                <#assign assetCategories=entry.getCategories() ministry="" />
+                <#if assetCategories?has_content>
+                    <#list assetCategories as category>
+                        <#assign vocabularyId=category.getVocabularyId()>
+                            <#if (vocabularyId==80291)>
+                                <#assign ministry=category.getTitle(locale)>
+                                    <#break>
+                            </#if>
+                    </#list>
+                </#if>
+
+                <#list entries as curEntry>
+                    <#assign
+                        rootElement=saxReaderUtil.read(curEntry.getAssetRenderer().getArticle().getContentByLocale(locale)).getRootElement()
+                        assetRenderer=curEntry.getAssetRenderer() theMirror="" image="" location=""
+                        url_detail=detailLinkJournalArticleService.getDetailLink(renderRequest, renderResponse, curEntry
+                        ,false,themeDisplay) />
+                    <#list rootElement.elements() as dynamicElement>
+                        <#if "image"==dynamicElement.attributeValue("name")>
+                            <#assign imageContent=dynamicElement.element("dynamic-content")
+                                image=dynamicElement.element("dynamic-content").getData()>
+                        </#if>
+                        <#if "theMirror"==dynamicElement.attributeValue("name")>
+                            <#assign theMirror=dynamicElement.element("dynamic-content").getData()>
+                        </#if>
+                        <#if "location"==dynamicElement.attributeValue("name")>
+                            <#assign location=dynamicElement.element("dynamic-content").getData()>
+                        </#if>
+                    </#list>
+
+                    <#assign assetCategories=curEntry.getCategories() minis="" />
+                    <#if assetCategories?has_content>
+                        <#list assetCategories as category>
+                            <#assign vocabularyId=category.getVocabularyId()>
+                                <#if (vocabularyId==80291)>
+                                    <#assign minis=category.getTitle(locale)>
+                                        <#break>
+                                </#if>
+                        </#list>
+                    </#if>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch ln" data-aos-delay="200">
+
+
+                        <div class="latestnew"
+                            style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%,rgba(18, 17, 17, 0.89) 100%), url(${image}); background-size: 100% 100%;">
+                            <span class="topText">${minis}</span>
+
+                            <div class="latestnew-img">
+                            </div>
+
+                            <div class="latestnew-info">
+                                <a href="${viewURL}" style="color: #FFF"
+                                    id="title"><span>${curEntry.getTitle(locale)}</span></a>
+                            </div>
+
+                            <div class="closedDateText">
+                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                                <span>${assetRenderer.getDisplayDate()?datetime?string["MMMM dd, yyyy"]}</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </#list>
+                <#else>
+                    <h1>${themeDisplay.translate("mnp-no-data-available")}</h1>
+    </#if>
+
+
+    </div>
+
+    <div class="continue">
+        <a href="/news-media/news/latest-news"><span class="continueText">
+                <@liferay_ui["message"] key="mnp-home-more" />
+            </span></a>
+    </div>
+    </div>
+</section>
