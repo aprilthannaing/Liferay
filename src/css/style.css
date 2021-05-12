@@ -10626,6 +10626,106 @@ Margin
     padding-right: 0px;
  }
 
+.portlet-body .alert {
+    padding: 18px;
+    font-size: 18px;
+    margin-bottom: 22px;
+    margin-top: 25px;
+}
+
+.breadcrumb-arrows .active {
+    background-color: #bfbff7;
+}
+
+#column-2 a {
+    color: black;
+    text-decoration: none;
+}
+
+.breadcrumb {
+    list-style: none;
+    background-color: #3d74a3;
+    border-radius: 4px;
+}
+
+.breadcrumb-arrows a::after {
+    border-bottom: 20px inset transparent;
+    border-left: 20px solid #2a5e8a;
+    border-top: 20px inset transparent;
+    content: '';
+    height: 0;
+    position: absolute;
+    right: -20px;
+    top: 0;
+    width: 0;
+    z-index: 2;
+}
+
+.breadcrumb-arrows li {
+    background-color: #2a5e8a;
+    overflow: visible;
+}
+
+.breadcrumb-arrows li {
+    margin-bottom: 0px;
+}
+
+ .breadcrumb-arrows li:last-child .entry {
+    padding-right: 23px;
+    color: white;
+}
+
+.breadcrumb-arrows li > a {
+    border-right: 2px solid #BAB6B6;
+    display: block;
+    max-width: 100%;
+    position: relative;
+}
+
+.breadcrumb-arrows li:last-child::before {
+    border-bottom: 20px inset transparent;
+    border-left: 20px solid #BAB6B6;
+    border-top: 20px inset transparent;
+    content: '';
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+
+
+.breadcrumb-arrows li:nth-child(n+2) a::before {
+    border-bottom: 20px inset transparent;
+    border-left: 20px solid #BAB6B6;
+    border-top: 20px inset transparent;
+    content: '';
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+
+ ul.gray_leftsidebar_nocollapse li {
+    line-height: 55px;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-left: 40px;
+    position: relative;
+    border: 2px solid #f3f3f9;
+}
+
+ .breadcrumb-arrows .active {
+    background-color: #3d74a3;
+    color: white;
+}
+
+ .breadcrumb {
+    list-style: none;
+    background-color: #2a5e8a;
+    border-radius: 4px;
+    margin: 0px 0px 0px 0px;
+}
 
     /*end*/
 

@@ -7,10 +7,10 @@ $(function () {
 		title.href = title.href.replace("home", "news-media/news/latest-news");
 	}
 
-	var title1 = document.getElementById("title1");
+	var title1 = document.getElementById("title1");	
 	if (title1 != null) {
 		title1.href = title1.href.replace("home", "news-media/news/latest-news");
-	}
+	}	
 
 
 	$('div[onload]').trigger('onload');
